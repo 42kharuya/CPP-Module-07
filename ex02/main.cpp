@@ -1,6 +1,7 @@
 #include "Array.hpp"
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 #define MAX_VAL 10
 
