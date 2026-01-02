@@ -68,6 +68,7 @@ int main() {
 			mirror[i] = value;
 		}
 
+		std::cout << "size: " << numbers.size() << std::endl;
 		for (int i = 0; i < MAX_VAL; ++i)
 			std::cout << numbers[i] << std::endl;
 
@@ -87,46 +88,6 @@ int main() {
 				return 1;
 			}
 		}
-
-		delete[] mirror;
-	}
-
-	{
-		std::cout << "\n////// Const Error, Index Error //////" << std::endl;
-
-		Array<int> numbers(MAX_VAL);
-		int* mirror = new int[MAX_VAL];
-		srand(time(NULL));
-		for (int i = 0; i < MAX_VAL; ++i) {
-			const int value = rand();
-			numbers[i] = value;
-			mirror[i] = value;
-		}
-
-		for (int i = 0; i < MAX_VAL; ++i)
-			std::cout << numbers[i] << std::endl;
-
-		std::cout << std::endl;
-		const Array<int> constNumbers = numbers;
-
-		try {
-			numbers[-2] = 0;
-		}
-		catch(const std::exception& e) {
-			std::cerr << e.what() << '\n';
-		}
-		try {
-			numbers[MAX_VAL] = 0;
-		}
-		catch(const std::exception& e) {
-			std::cerr << e.what() << '\n';
-		}
-
-		std::cout << std::endl;
-		for (int i = 0; i < MAX_VAL; i++)
-			numbers[i] = rand();
-		for (int i = 0; i < MAX_VAL; ++i)
-			std::cout << numbers[i] << std::endl;
 
 		delete[] mirror;
 	}
