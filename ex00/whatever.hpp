@@ -15,7 +15,7 @@ T &max(T &a, T &b) {
 
 template <typename T>
 T &min(T &a, T &b) {
-    return (a > b) ? b : a;
+    return (a < b) ? a : b;
 }
 
 #endif // _WHATEVER_H_

@@ -3,12 +3,15 @@
 
 #include <exception>
 #include <stdexcept>
+#include <iostream>
+#include <string>
+#include <stdlib.h>
 
 template <typename T>
 class Array {
    public:
-    Array() : _size(0), _data(new T[0]) {}
-    Array(unsigned int n) : _size(n), _data(new T[n]) {}
+    Array() : _size(0), _data(new T[0]()) {}
+    Array(unsigned int n) : _size(n), _data(new T[n]()) {}
     ~Array() { delete[] _data; }
     Array(Array const &other) : _size(other._size), _data(new T[other._size]) {
         for (unsigned int i = 0; i < _size; ++i) {
